@@ -6,7 +6,7 @@ import '../../Cart/CartComponents/CartList.css'
 export function DashboardDeatils() {
     const email = useSelector(state => state.loginState.email);
     let [all_datas, setall_datas] = useState([]);
-
+    let [length, setlength] = useState(false);
     useEffect(() => {
         let ftn = async () => {
             const response = await fetch(`${process.env.REACT_APP_HOST}/orders`, {
@@ -15,6 +15,12 @@ export function DashboardDeatils() {
             })
             const data_res = await response.json();
             setall_datas(data_res);
+            setlength(0);
+            {
+                data_res!==0 && data_res.map((arr)=>{
+                    arr.user.email === email && setlength(true)
+                })
+            }
         }
         ftn();
     }, [])
@@ -24,8 +30,8 @@ export function DashboardDeatils() {
             <h1 className="paragraph-tl text-2xl text-center font-semibold dark:text-slate-100 mb-0 mt-6 pt-7 underline underline-offset-8">
                 Dashboard Detail
             </h1>
-            {console.log(all_datas)}
-            {all_datas.length === 0 ? <DashboardEmpty /> :
+            {console.log(all_datas, length)}
+            {!length ? <DashboardEmpty /> :
                 (
                     all_datas.map((arr, index) => (
                         arr.user.email === email && (
