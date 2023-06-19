@@ -1,0 +1,32 @@
+.drop-down, .drop-down1{
+    position: fixed;
+    top: 51px;
+    right: 0;
+    margin: 20px 20px;
+    z-index: 100;
+    box-shadow: 4px 5px 7px #ccc, 0px 0px 4px #ccc;
+    width: 170px;
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+}
+.drop-down p, .drop-down1 p, .drop-down1 h1{
+    padding: 8px 30px;
+    margin: 10px;
+    border-radius: 7px;
+    font-size: 17px;
+}
+.drop-down p:hover, .drop-down1 p:hover{
+    background-color: #f4f4f4;
+    cursor: pointer;
+}
+.drop-down1{
+    width: 220px;
+}
+.drop-down1 p, .drop-down1 h1{
+    font-size: 16px;
+    padding: 4px 30px;
+}
+.mail{
+    font-size: 13px !important;
+    margin-left: -20px !important;
+}

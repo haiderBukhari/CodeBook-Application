@@ -1,0 +1,47 @@
+.filter-section{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 270px;
+    background-color: #fff;
+    z-index: 100;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.flex input, .flex label{
+    cursor:pointer;
+    font-size: 17px;
+}
+.flex label{
+    color: rgb(71, 71, 71);
+}
+.main-filter{
+    /* position: fixed; */
+    width: 100%;
+}
+.main-filter hr{
+    margin-top: -17px;
+}
+.upper{
+    width: 100%;
+    display: flex;
+    flex-direction: row;    
+    justify-content: space-between;
+    font-size: 20px;
+}
+@media only screen and (max-width:1000px){
+    .apply--filter{
+        margin-left: -0px;
+    }
+    .hrs{
+        margin-bottom: 28px;
+    }
+    .apply-filter{
+        margin-right: 178px;
+    }
+    .apply-filters{
+        margin-right: 149px;
+    }
+}

@@ -1,0 +1,71 @@
+header{
+    margin: 50px;
+}
+.upper-part{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+.para, .paraoi{
+    /* font-size: 20px; */
+    padding: 0 10px;
+    margin-top: 10px;
+    text-align: justify;
+    line-height: 2.1em;
+}
+.paraoi{
+    font-size: 19px;
+}
+.button{
+    justify-self: center;
+    font-size: 19px;
+    border: 1px solid rgb(37, 99, 235);
+    padding: 8px 19px;
+    margin: 20px auto;
+    border-radius: 4px;
+    color: #fff;
+    background-color: rgb(37, 99, 235);
+    /* box-shadow: 3px 4px 9px #ccc; */
+}
+.button:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+.upper-part h1{
+    font-size: 40px;
+    /* font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    margin-bottom: 20px;
+}
+@media only screen and (max-width:1000px) {
+    .upper-part h1{
+        text-align: center;
+    }
+    p{
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 2.0rem !important;
+        text-align: center !important;
+    }
+    header{
+        margin: 10px;
+        margin-top: 30px;
+    }
+}
+@media only screen and (min-width:1000px) {
+    header{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex: 1 1 100px;
+    }
+    .para{
+        text-align: justify;
+        max-width: 600px;
+    }
+    .upper-part{
+        margin-right: 25px;
+    }
+    .hero-img{
+        width: 1300px;
+    }
+}
