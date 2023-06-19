@@ -8,6 +8,7 @@ import { appear_notification } from '../Components/ToastNotification';
 import { DynamicTitile } from '../DynamicPageTitle';
 export const ProductDetail = () => {
     DynamicTitile('Products Detail')
+    let [loading, setloading] = useState(true);
     let dispatch = useDispatch();
     let cartdata = useSelector(state => state.cartState.cartList);
     let params = useParams();
@@ -19,12 +20,12 @@ export const ProductDetail = () => {
         return (
             list.map((arr) => (
                 arr ? <i className="fa-solid fa-star fa-beat"></i> : <i className="fa-regular fa-star fa-beat"></i>
-            )))
-    }
-    return (
-        <main className='detail-section'>
-            {
-                data && (
+                )))
+            }
+            return (
+            <main className='detail-section'>
+             {
+                data ? (
                     <>
                         <div className="above-data mt-10">
                             <h1 data-aos="fade-up-right"  className='text-3xl text-center font-bold dark:text-white px-2'>{data.name}</h1>
@@ -54,7 +55,7 @@ export const ProductDetail = () => {
                             </div>
                         </div>
                     </>
-                )
+                ):<h1 className='text-2xl text-center font-semibold dark:text-slate-100 underline underline-offset-8 end'>Loading ...</h1>
             }
         </main>
     )
