@@ -43,7 +43,10 @@ export const ProductList = () => {
                 </div>
             }
             {
-                length===0 && <h1 data-aos="fade-up" className='text-2xl text-center font-semibold dark:text-slate-100 underline underline-offset-8 end'>Searched Item for the product does not exist</h1>
+                (length===0 && !search.get('q')) &&  <h1 data-aos="fade-up" className='text-2xl text-center font-semibold dark:text-slate-100 underline underline-offset-8 end'>Loading ...</h1>
+            }
+            {
+                (search.get('q') && length===0) &&  <h1 data-aos="fade-up" className='text-2xl text-center font-semibold dark:text-slate-100 underline underline-offset-8 end'>Searched Item for the product does not exist</h1>
             }
             <div className='featured-book flex justify-center items-center flex-wrap'>
                 {
